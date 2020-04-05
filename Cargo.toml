@@ -1,8 +1,13 @@
 [package]
-name = "doom"
-version = "0.1.0"
+name = "crispy-doom-rs"
+version = "0.0.1"
 authors = ["oigi333 <ignacy.kucharski@autonomik.pl>"]
 edition = "2018"
 
 [dependencies]
 enumflags2 = "0.6.2"
+structopt = "0.3.12"
+
+[dependencies.sdl2]
+version = "0.33.0"
+features = ["bundled"]

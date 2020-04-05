@@ -30,7 +30,7 @@ pub struct CrispySettings {
     negative_health: bool,
     /// "overunder"
     height_check: bool,
-    // I do not know what is it does
+    /// I do not know what is it does
     pitch: bool,
     player_coords: Widgets,
     recoil: bool,
@@ -61,8 +61,8 @@ pub struct CrispySettings {
     single_player: bool,
     stretch_sky: bool,
 
-    sdl_version: String,
-    platform: String,
+    sdl_version: sdl2::version::Version,
+    platform: &'static str,
     // TODO generic Fn trait
     post_rendering_hook: fn() -> ()
 }
@@ -127,8 +127,8 @@ impl Default for CrispySettings {
             havessg: false,
             single_player: false,
             stretch_sky: false,
-            sdl_version: "".into(),
-            platform: "".into(),
+            sdl_version: sdl2::version::version(),
+            platform: sdl2::get_platform(),
 
             post_rendering_hook: || {}
         }
